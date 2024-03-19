@@ -1,0 +1,30 @@
+local BadgeService = game:GetService("BadgeService")
+local Players = game:GetService("Players")
+
+local BADGE_ID = 1989710087  -- Change this to your badge ID
+
+local function onPlayerAdded(player)
+  -- Check if the player has the badge
+  	local success, hasBadge = pcall(BadgeService.UserHasBadgeAsync, BadgeService, player.UserId, badgeID)
+
+      -- If there's an error, issue a warning and exit the function
+      	if not success then
+        		warn("Error while checking if player has badge")
+                		return
+                        	end
+
+                            	if hasBadge then
+                                		-- Handle player's badge ownership as needed
+                                        	end
+                                            end
+
+                                            -- Connect "PlayerAdded" events to the "onPlayerAdded()" function
+                                            Players.PlayerAdded:Connect(onPlayerAdded)
+
+
+
+
+
+
+
+
