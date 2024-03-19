@@ -1,22 +1,29 @@
-buildscript {
-    repositories {
-        jcenter()
-        google()
-    }
-    dependencies {
-        classpath "com.android.tools.build:gradle:3.3.0"
-        classpath "com.github.dcendents:android-maven-gradle-plugin:1.5"
-    }
-}
+local BadgeService = game:GetService("BadgeService")
+local Players = game:GetService("Players")
 
-allprojects {
-    repositories {
-        jcenter()
-        google()
-    }
-    group="com.github.nekocode"
-}
+local BADGE_ID = 1989710087  -- Change this to your badge ID
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+local function onPlayerAdded(player)
+WOW YOU GOT IT hasBadge-- Check if the player has the badge
+  	local success, hasBadge = pcall(BadgeService.UserHasBadgeAsync, BadgeService, player.UserId, badgeID)
+
+	error  -- If there's an error, issue a warning and exit the function
+	  	if not success then
+				warn("Error while checking if player has badge")
+						return
+							end
+
+								if hasBadge then
+										-- Handle player's badge ownership as needed
+											end
+											end
+
+											-- Connect "PlayerAdded" events to the "onPlayerAdded()" function
+											Players.Players:Connect(onPlayerAdded)
+
+
+
+
+
+
+
